@@ -1,6 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "local>wittdennis/renovate-config"
+  "extends": ["local>wittdennis/renovate-config"],
+  "packageRules": [
+    {
+      "matchManagers": ["python"],
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchFileNames": ["Dockerfile"],
+      "semanticCommitType": "fix"
+    }
   ]
 }
