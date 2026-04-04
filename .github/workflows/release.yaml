@@ -1,0 +1,17 @@
+name: github-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        default: auto
+        description: "Use auto to automatically calculate version"
+
+jobs:
+  release:
+    uses: wittdennis/pipelines/.github/workflows/cog-release.yaml@4935fe307bbde00c895e19be00476904f61bbfa1 # 2.0.4
+    with:
+      version: ${{ inputs.version }}
+    secrets:
+      release-token: ${{ secrets.RELEASE_TOKEN }}
