@@ -1,4 +1,4 @@
-FROM ghcr.io/netbox-community/netbox:v4.5.7
+FROM ghcr.io/netbox-community/netbox:v4.5.8
 
 COPY ./plugin_requirements.txt /opt/netbox/
 RUN /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt
